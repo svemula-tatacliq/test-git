@@ -9,6 +9,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "dev-start": "concurrently --kill-others \"less-watch-compiler --config ./src/less-watcher.config.json\" \"react-scripts start\"",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -16,16 +17,20 @@
   "eslintConfig": {
     "extends": "react-app"
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
+  "development": [
+    "last 1 chrome version",
+    "last 1 firefox version",
+    "last 1 safari version"
+  ],
+  "devDependencies": {
+    "less": "^3.9.0",
+    "less-watch-compiler": "^1.13.0",
+    "concurrently": "^4.1.0"
   }
 }
